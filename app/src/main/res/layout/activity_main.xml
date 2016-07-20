@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homePage"
+    android:background="@drawable/girl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.android.fivethings.MainActivity">
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="0"
+       android:text="My Wardrobe"
+       android:textSize="56sp"
+       android:textStyle="italic"
+       android:textColor="#FFE082"
+       android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/dresses"
+                style="@style/classification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dresses" />
+            <Button
+                android:id="@+id/tops"
+                style="@style/classification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tops" />
+            <Button
+                android:id="@+id/jackets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jackets"
+                style="@style/classification"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/jeans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jeans"
+                style="@style/classification"
+                />
+            <Button
+                android:id="@+id/shorts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shorts"
+                style="@style/classification"
+                />
+            <Button
+                android:id="@+id/skirts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skirts"
+                style="@style/classification"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
