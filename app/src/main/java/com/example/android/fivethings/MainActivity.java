@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
         addListenerOnButton2();
     }
 
+
+    // dresses page
     public void addListenerOnButton1(){
         final Context context = this;
         button1 = (Button)findViewById(R.id.dresses);
@@ -30,13 +32,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    //tops page
     public void addListenerOnButton2(){
         final Context context = this;
         button2 = (Button)findViewById(R.id.tops);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,dresses.class);
+                Intent intent = new Intent(context,tops.class);
                 startActivity(intent);
             }
         });
