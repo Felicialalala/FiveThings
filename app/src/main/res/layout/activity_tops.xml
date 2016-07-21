@@ -2,8 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@drawable/dots">
+    android:background="@drawable/dots"
+    android:fillViewport="true">
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/tops"
@@ -14,20 +14,22 @@
 
         <Button
             android:id="@+id/add"
+            style="@style/initiate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add a new one"
-            style="@style/initiate"/>
+            android:text="Add a new one" />
 
         <TextView
             style="@style/greeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="You already have these:" />
-        <TextView
+
+        <ListView
             android:id="@+id/records"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+        </ListView>
 
     </LinearLayout>
 </ScrollView>

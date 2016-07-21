@@ -1,12 +1,12 @@
 package com.example.android.fivethings;
-
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class addNew extends AppCompatActivity {
 
@@ -14,17 +14,32 @@ public class addNew extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new);
+        addListenerOnsaveButton();
     }
 
     /**
      * pick a date
      */
 
-    /**
-     * take a photo with the Camera App
-     */
-    static final int REQUEST_IMAGE_CAPTURE = 1;
+   /**
+    * when press save, jump to the former page
+    */
+    Button save_buttom;
 
+    public void addListenerOnsaveButton(){
+        final Context context = this;
+        save_buttom = (Button)findViewById(R.id.saveButton);
+        save_buttom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, tops.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+    }
     /**
      * get the input information
      */
@@ -39,8 +54,16 @@ public class addNew extends AppCompatActivity {
         String price = priceField.getText().toString();//store price
         EditText noteField = (EditText)findViewById(R.id.notes);
         String note = noteField.getText().toString();//store notes and thoughts
+
+        Intent i = new Intent(this,addNew.class);
         String newRecords = createRecords(brand, date, color, price, note);
-        display(newRecords);
+        Bundle bundle = new Bundle();
+        bundle.putString("record",newRecords);
+        i.putExtras(bundle);
+        startActivity(i);
+
+
+        //Toast.makeText(this,"A new item added!",Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -55,12 +78,9 @@ public class addNew extends AppCompatActivity {
         return records;
     }
     /**
-     * This method displays records on the screen.
+     * take a photo with the Camera App
      */
-    private void display(String newRecords) {
-        TextView quantityTextView = (TextView) findViewById(R.id.records);
-        quantityTextView.setText(newRecords);
-    }
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
