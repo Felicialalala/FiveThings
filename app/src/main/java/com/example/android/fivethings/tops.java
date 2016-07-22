@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 public class tops extends AppCompatActivity {
     Button buttonAdd;
+    Button buttonBack;
     //Bundle bundle = getIntent().getExtras();
 
     public ListView itemsListView;
@@ -30,6 +31,7 @@ public class tops extends AppCompatActivity {
         itemsListView.setAdapter(arrayAdapter);
 
         addListenerOnButtonAdd();
+        addListenerOnButtonBack();
     }
 
     /**
@@ -42,6 +44,20 @@ public class tops extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, addNew.class);
+                startActivity(intent);
+            }
+        });
+    }
+    /**
+     * The page jump to when adding a new item
+     */
+    public void addListenerOnButtonBack(){
+        final Context context = this;
+        buttonAdd = (Button)findViewById(R.id.back);
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MainActivity.class);
                 startActivity(intent);
             }
         });
