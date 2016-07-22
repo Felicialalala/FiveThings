@@ -1,4 +1,5 @@
 package com.example.android.fivethings;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,14 +22,14 @@ public class addNew extends AppCompatActivity {
      * pick a date
      */
 
-   /**
-    * when press save, jump to the former page
-    */
+    /**
+     * when press save, jump to the former page
+     */
     Button save_buttom;
 
-    public void addListenerOnsaveButton(){
+    public void addListenerOnsaveButton() {
         final Context context = this;
-        save_buttom = (Button)findViewById(R.id.saveButton);
+        save_buttom = (Button) findViewById(R.id.saveButton);
         save_buttom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,31 +41,34 @@ public class addNew extends AppCompatActivity {
         });
 
     }
+
     /**
      * get the input information
      */
-    public void saveButtom(View view){
-        EditText brandField = (EditText)findViewById(R.id.brand);
+    public void saveButtom(View view) {
+        EditText brandField = (EditText) findViewById(R.id.brand);
         String brand = brandField.getText().toString();// store brand information
-        EditText dateField = (EditText)findViewById(R.id.date);
+        EditText dateField = (EditText) findViewById(R.id.date);
         String date = dateField.getText().toString();//store date information
-        EditText colorField = (EditText)findViewById(R.id.color);
+        EditText colorField = (EditText) findViewById(R.id.color);
         String color = colorField.getText().toString();//store color
-        EditText priceField = (EditText)findViewById(R.id.price);
+        EditText priceField = (EditText) findViewById(R.id.price);
         String price = priceField.getText().toString();//store price
-        EditText noteField = (EditText)findViewById(R.id.notes);
+        EditText noteField = (EditText) findViewById(R.id.notes);
         String note = noteField.getText().toString();//store notes and thoughts
         String newRecords = createRecords(brand, date, color, price, note);
-        Intent i = new Intent(addNew.this,tops.class);
-        i.putExtra("newRecords",newRecords);
+
+        Intent i = new Intent(addNew.this, tops.class);
+        i.putExtra("newRecords", "hello world");
         startActivity(i);
+
         //Toast.makeText(this,"A new item added!",Toast.LENGTH_SHORT).show();
     }
 
     /**
      * items list
      */
-    public String createRecords(String brand,String date,String color,String price,String note){
+    public String createRecords(String brand, String date, String color, String price, String note) {
         String records = "Brand: " + brand;
         records += "\nBought Date: " + date;
         records += "\nColor: " + color;
@@ -72,10 +76,12 @@ public class addNew extends AppCompatActivity {
         records += "\nNotes: " + note;
         return records;
     }
+
     /**
      * take a photo with the Camera App
      */
     static final int REQUEST_IMAGE_CAPTURE = 1;
+
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {

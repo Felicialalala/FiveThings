@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,tops.class);
+
+                intent.putExtra("newRecords", "hello world");
+
                 startActivity(intent);
             }
         });

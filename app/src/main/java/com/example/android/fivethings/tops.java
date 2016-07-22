@@ -16,18 +16,25 @@ public class tops extends AppCompatActivity {
 
     public ListView itemsListView;
     public ArrayAdapter arrayAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tops);
-        //String newRecords = getIntent().getExtras().getString("newRecords");
-        //Bundle bundle = getIntent().getExtras();
-        //String newRecord = bundle.getString("newRecord");
+
+        //String newRecords = getIntent().getStringExtra("newRecords");
+        //Log.d("@@@@", "newRecords="+newRecords);
+
+//        Bundle bundle = getIntent().getExtras();
+//        String newRecord = bundle.getString("newRecord");
 
         String[] items = {"Red Valentino\n2016.5.17\npink\n4000\nNice gift!",
-        "Kate Spade\n2016.8.1\nblack\n3000\nI shouldn't buy it."};//The list of items
-        itemsListView = (ListView)findViewById(R.id.records);
-        arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,items);
+                "Kate Spade\n2016.8.1\nblack\n3000\nI shouldn't buy it.",
+        "Lily Brown\n2016.8.3\nwhite\n800\nNice",
+        "Snidel\n2016.8.10\ngrey\n900\nCute",
+        "Snidel\n2016.8.10\npink\n800\nGood Style"};//The list of items
+        itemsListView = (ListView) findViewById(R.id.records);
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, items);
         itemsListView.setAdapter(arrayAdapter);
 
         addListenerOnButtonAdd();
@@ -37,9 +44,9 @@ public class tops extends AppCompatActivity {
     /**
      * The page jump to when adding a new item
      */
-    public void addListenerOnButtonAdd(){
+    public void addListenerOnButtonAdd() {
         final Context context = this;
-        buttonAdd = (Button)findViewById(R.id.add);
+        buttonAdd = (Button) findViewById(R.id.add);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,12 +55,13 @@ public class tops extends AppCompatActivity {
             }
         });
     }
+
     /**
      * The page jump to when adding a new item
      */
-    public void addListenerOnButtonBack(){
+    public void addListenerOnButtonBack() {
         final Context context = this;
-        buttonAdd = (Button)findViewById(R.id.back);
+        buttonAdd = (Button) findViewById(R.id.back);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
