@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 public class tops extends AppCompatActivity {
     Button buttonAdd;
-    Bundle bundle = getIntent().getExtras();
+    //Bundle bundle = getIntent().getExtras();
 
     public ListView itemsListView;
     public ArrayAdapter arrayAdapter;
@@ -19,11 +19,12 @@ public class tops extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tops);
+        //String newRecords = getIntent().getExtras().getString("newRecords");
+        //Bundle bundle = getIntent().getExtras();
+        //String newRecord = bundle.getString("newRecord");
 
-        Bundle bundle = getIntent().getExtras();
-        String record = bundle.getString("record");
-
-        String[] items = {"1",record};//The list of items
+        String[] items = {"Red Valentino\n2016.5.17\npink\n4000\nNice gift!",
+        "Kate Spade\n2016.8.1\nblack\n3000\nI shouldn't buy it."};//The list of items
         itemsListView = (ListView)findViewById(R.id.records);
         arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,items);
         itemsListView.setAdapter(arrayAdapter);

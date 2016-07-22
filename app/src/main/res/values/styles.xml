@@ -23,7 +23,7 @@
 
     <style name="initiate">
         <item name="android:textSize">16sp</item>
-        <item name="android:background">@null</item>
+        <item name="android:background">#F48FB1</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
     <style name="AppTheme.NoActionBar">

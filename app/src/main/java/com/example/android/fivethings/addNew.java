@@ -54,15 +54,10 @@ public class addNew extends AppCompatActivity {
         String price = priceField.getText().toString();//store price
         EditText noteField = (EditText)findViewById(R.id.notes);
         String note = noteField.getText().toString();//store notes and thoughts
-
-        Intent i = new Intent(this,addNew.class);
         String newRecords = createRecords(brand, date, color, price, note);
-        Bundle bundle = new Bundle();
-        bundle.putString("record",newRecords);
-        i.putExtras(bundle);
+        Intent i = new Intent(addNew.this,tops.class);
+        i.putExtra("newRecords",newRecords);
         startActivity(i);
-
-
         //Toast.makeText(this,"A new item added!",Toast.LENGTH_SHORT).show();
     }
 

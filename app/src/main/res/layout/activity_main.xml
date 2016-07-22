@@ -33,17 +33,17 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/dresses"
-                style="@style/classification"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dresses" />
-            <Button
                 android:id="@+id/tops"
                 style="@style/classification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tops" />
+            <Button
+                android:id="@+id/dresses"
+                style="@style/classification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dresses" />
             <Button
                 android:id="@+id/jackets"
                 android:layout_width="wrap_content"
